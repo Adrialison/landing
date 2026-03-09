@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizon — Studio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="logo">Horizon</div>
+      <ul class="nav-links">
+        <li><a href="#">Trabajo</a></li>
+        <li><a href="#">Estudio</a></li>
+        <li><a href="#">Proceso</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <!-- Left -->
+      <div class="hero-left">
+        <p class="eyebrow">Studio Creativo — 2025</p>
+        <h1>Diseño que<br /><em>inspira</em> y<br />perdura.</h1>
+        <p class="hero-desc">
+          Creamos experiencias digitales y visuales que conectan marcas con
+          personas. Cada proyecto es una oportunidad de contar una historia
+          única.
+        </p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary"><span>Ver proyectos</span></a>
+          <a href="#" class="btn-ghost">Conocernos</a>
+        </div>
+        <div class="scroll-hint">
+          <div class="scroll-line"></div>
+          Scroll
+        </div>
+      </div>
+
+      <!-- Right — visual composition -->
+      <div class="hero-right">
+        <div class="img-container">
+          <div class="geo-bg"></div>
+          <div class="geo-rect"></div>
+          <div class="geo-circle"></div>
+          <div class="geo-accent"></div>
+          <div class="geo-line-v"></div>
+          <div class="geo-dot-grid">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="tag">Disponible para proyectos</div>
+          <div class="img-text">
+            <div class="num">24</div>
+            <div class="label">Proyectos este año</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">84<sup>+</sup></div>
+        <div class="stat-label">Clientes satisfechos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">12<sup>+</sup></div>
+        <div class="stat-label">Años de experiencia</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6<sup>×</sup></div>
+        <div class="stat-label">Premios de diseño</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">98<sup>%</sup></div>
+        <div class="stat-label">Tasa de satisfacción</div>
+      </div>
+    </div>
+
+    <script>
+      const cursor = document.getElementById("cursor");
+      const ring = document.getElementById("cursorRing");
+      let mx = 0,
+        my = 0,
+        rx = 0,
+        ry = 0;
+
+      document.addEventListener("mousemove", (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+        cursor.style.left = mx + "px";
+        cursor.style.top = my + "px";
+      });
+
+      (function animateRing() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.left = rx + "px";
+        ring.style.top = ry + "px";
+        requestAnimationFrame(animateRing);
+      })();
+
+      document.querySelectorAll("a, button").forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+          cursor.style.width = "18px";
+          cursor.style.height = "18px";
+          ring.style.width = "52px";
+          ring.style.height = "52px";
+        });
+        el.addEventListener("mouseleave", () => {
+          cursor.style.width = "10px";
+          cursor.style.height = "10px";
+          ring.style.width = "36px";
+          ring.style.height = "36px";
+        });
+      });
+    </script>
+  </body>
+</html>
