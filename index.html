@@ -1,132 +1,690 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Horizon — Studio</title>
+    <title>Lumina Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@200;300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,500&family=DM+Sans:wght@200;300;400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Fraunces", "serif"],
+              sans: ["DM Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
-
-    <!-- NAV -->
-    <nav>
-      <div class="logo">Horizon</div>
-      <ul class="nav-links">
-        <li><a href="#">Trabajo</a></li>
-        <li><a href="#">Estudios</a></li>
-        <li><a href="#">Proceso</a></li>
-        <li><a href="#">Contacto</a></li>
+  <body class="bg-stone-50 text-stone-900 overflow-x-hidden">
+    <!-- ══ NAV ══ -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 py-4 bg-stone-50/80 backdrop-blur-md border-b border-stone-100"
+    >
+      <a
+        href="#"
+        class="font-display text-xl font-light tracking-widest uppercase"
+        >Lumina</a
+      >
+      <ul
+        class="hidden md:flex gap-10 text-xs font-light tracking-widest uppercase text-stone-500"
+      >
+        <li>
+          <a href="#work" class="hover:text-stone-900 transition-colors"
+            >Proyectos</a
+          >
+        </li>
+        <li>
+          <a href="#services" class="hover:text-stone-900 transition-colors"
+            >Servicios</a
+          >
+        </li>
+        <li>
+          <a href="#about" class="hover:text-stone-900 transition-colors"
+            >Nosotros</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="hover:text-stone-900 transition-colors"
+            >Contacto</a
+          >
+        </li>
       </ul>
+      <a
+        href="#contact"
+        class="btn-slide text-xs tracking-widest uppercase font-light px-5 py-2.5 bg-stone-900 text-stone-50"
+      >
+        <span>Trabajemos</span>
+      </a>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
+    <!-- ══ HERO ══ -->
+    <section
+      class="relative min-h-screen grid grid-cols-1 md:grid-cols-2 pt-16"
+    >
       <!-- Left -->
-      <div class="hero-left">
-        <p class="eyebrow">Studio Creativo — 2025</p>
-        <h1>Diseño que<br /><em>inspira</em> y<br />perdura.</h1>
-        <p class="hero-desc">
-          Creamos experiencias digitales y visuales que conectan marcas con
-          personas. Cada proyecto es una oportunidad de contar una historia
-          única.
+      <div
+        class="flex flex-col justify-center px-6 md:px-16 py-24 md:py-0 relative z-10"
+      >
+        <p
+          class="anim-1 text-xs tracking-[0.3em] uppercase text-amber-500 mb-5"
+        >
+          ✦ Estudio Creativo · Lima, Perú
         </p>
-        <div class="hero-actions">
-          <a href="#" class="btn-primary"><span>Ver proyectos</span></a>
-          <a href="#" class="btn-ghost">Conocernos</a>
+        <h1
+          class="anim-2 font-display text-6xl md:text-8xl font-light leading-[0.95] mb-8"
+        >
+          Donde la<br />
+          <em class="italic" style="color: #b06a44">visión</em><br />
+          cobra forma.
+        </h1>
+        <p
+          class="anim-3 max-w-sm text-sm font-light leading-relaxed text-stone-500 mb-10"
+        >
+          Diseñamos marcas, sitios web y experiencias visuales que dejan huella.
+          Para fundadores y empresas que creen en la belleza funcional.
+        </p>
+        <div class="anim-4 flex gap-5 items-center">
+          <a
+            href="#work"
+            class="btn-slide text-xs tracking-widest uppercase font-light px-7 py-3.5 bg-stone-900 text-stone-50"
+          >
+            <span>Ver trabajo</span>
+          </a>
+          <a
+            href="#about"
+            class="text-xs tracking-widest uppercase font-light text-stone-500 hover:text-stone-900 transition-colors flex items-center gap-2"
+          >
+            Conocernos <span>→</span>
+          </a>
         </div>
-        <div class="scroll-hint">
-          <div class="scroll-line"></div>
-          Scroll
+        <!-- Stats -->
+        <div class="anim-5 flex gap-10 mt-16 pt-10 border-t border-stone-100">
+          <div>
+            <p class="font-display text-3xl font-light">
+              120<sup class="text-amber-500 text-sm">+</sup>
+            </p>
+            <p class="text-xs text-stone-400 tracking-widest uppercase mt-1">
+              Proyectos
+            </p>
+          </div>
+          <div>
+            <p class="font-display text-3xl font-light">
+              8<sup class="text-amber-500 text-sm">×</sup>
+            </p>
+            <p class="text-xs text-stone-400 tracking-widest uppercase mt-1">
+              Premios
+            </p>
+          </div>
+          <div>
+            <p class="font-display text-3xl font-light">
+              99<sup class="text-amber-500 text-sm">%</sup>
+            </p>
+            <p class="text-xs text-stone-400 tracking-widest uppercase mt-1">
+              Satisfacción
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- Right — visual composition -->
-      <div class="hero-right">
-        <div class="img-container">
-          <div class="geo-bg"></div>
-          <div class="geo-rect"></div>
-          <div class="geo-circle"></div>
-          <div class="geo-accent"></div>
-          <div class="geo-line-v"></div>
-          <div class="geo-dot-grid">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
+      <!-- Right image -->
+      <div class="anim-img relative min-h-[60vh] md:min-h-screen">
+        <img
+          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80"
+          alt="Hero"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent"
+        ></div>
+        <!-- floating card -->
+        <div
+          class="animate-float absolute bottom-10 left-8 bg-white/10 backdrop-blur-lg border border-white/20 p-5 max-w-xs"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <div
+              class="w-8 h-8 rounded-full bg-amber-400 flex items-center justify-center text-stone-900 text-xs font-bold"
+            >
+              ★
+            </div>
+            <div>
+              <p class="text-white text-xs font-light tracking-wide">
+                Proyecto destacado
+              </p>
+              <p class="text-white/60 text-xs">Brand Identity · 2025</p>
+            </div>
           </div>
-          <div class="tag">Disponible para proyectos</div>
-          <div class="img-text">
-            <div class="num">24</div>
-            <div class="label">Proyectos este año</div>
+          <div class="w-full h-1 bg-white/10 rounded-full">
+            <div class="h-1 bg-amber-400 rounded-full w-3/4"></div>
+          </div>
+        </div>
+        <div class="tag-pill absolute top-10 right-8">Disponible · Q2 2025</div>
+      </div>
+    </section>
+
+    <!-- ══ MARQUEE ══ -->
+    <div class="bg-stone-900 py-4 overflow-hidden">
+      <div
+        class="marquee-track text-stone-50 text-xs tracking-[0.25em] uppercase font-light opacity-50"
+      >
+        <span>Branding</span><span>·</span><span>Web Design</span><span>·</span
+        ><span>Motion</span><span>·</span> <span>Editorial</span><span>·</span
+        ><span>Fotografía</span><span>·</span><span>UI / UX</span><span>·</span>
+        <span>Identidad Visual</span><span>·</span><span>Packaging</span
+        ><span>·</span><span>Estrategia</span><span>·</span>
+        <span>Branding</span><span>·</span><span>Web Design</span><span>·</span
+        ><span>Motion</span><span>·</span> <span>Editorial</span><span>·</span
+        ><span>Fotografía</span><span>·</span><span>UI / UX</span><span>·</span>
+        <span>Identidad Visual</span><span>·</span><span>Packaging</span
+        ><span>·</span><span>Estrategia</span><span>·</span>
+      </div>
+    </div>
+
+    <!-- ══ WORK GRID ══ -->
+    <section id="work" class="px-6 md:px-16 py-28">
+      <div class="flex justify-between items-end mb-16" data-reveal>
+        <div>
+          <p class="text-xs tracking-[0.3em] uppercase text-amber-500 mb-3">
+            Portafolio
+          </p>
+          <h2 class="font-display text-5xl md:text-6xl font-light">
+            Trabajo <em class="italic" style="color: #b06a44">selecto</em>
+          </h2>
+        </div>
+        <a
+          href="#"
+          class="hidden md:flex text-xs tracking-widest uppercase font-light text-stone-400 hover:text-stone-900 transition-colors items-center gap-2"
+          >Ver todo →</a
+        >
+      </div>
+
+      <!-- Bento -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+        <div
+          class="md:col-span-7 img-zoom relative overflow-hidden"
+          data-reveal
+        >
+          <img
+            src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=1000&q=80"
+            alt="P1"
+            class="w-full h-80 md:h-[520px] object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-stone-900/70 to-transparent flex flex-col justify-end p-8"
+          >
+            <span class="tag-pill mb-3 self-start">Branding</span>
+            <h3 class="font-display text-3xl font-light text-white">
+              Natura Collective
+            </h3>
+            <p class="text-white/60 text-xs tracking-widest uppercase mt-1">
+              Identidad Visual · 2024
+            </p>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 flex flex-col gap-4">
+          <div
+            class="img-zoom relative overflow-hidden"
+            data-reveal
+            style="transition-delay: 0.1s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=700&q=80"
+              alt="P2"
+              class="w-full h-60 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-stone-900/70 to-transparent flex flex-col justify-end p-6"
+            >
+              <span class="tag-pill mb-2 self-start">Web</span>
+              <h3 class="font-display text-xl font-light text-white">
+                Arkè Studio
+              </h3>
+            </div>
+          </div>
+          <div
+            class="img-zoom relative overflow-hidden"
+            data-reveal
+            style="transition-delay: 0.2s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80"
+              alt="P3"
+              class="w-full h-60 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-stone-900/70 to-transparent flex flex-col justify-end p-6"
+            >
+              <span class="tag-pill mb-2 self-start">Editorial</span>
+              <h3 class="font-display text-xl font-light text-white">
+                Revista Forma
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="md:col-span-4 img-zoom relative overflow-hidden"
+          data-reveal
+          style="transition-delay: 0.1s"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=600&q=80"
+            alt="P4"
+            class="w-full h-64 object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-stone-900/70 to-transparent flex flex-col justify-end p-6"
+          >
+            <h3 class="font-display text-xl font-light text-white">
+              Bloom Fragrances
+            </h3>
+            <p class="text-white/60 text-xs tracking-widest uppercase mt-1">
+              Packaging
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="md:col-span-4 img-zoom relative overflow-hidden"
+          data-reveal
+          style="transition-delay: 0.2s"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=600&q=80"
+            alt="P5"
+            class="w-full h-64 object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-stone-900/70 to-transparent flex flex-col justify-end p-6"
+          >
+            <h3 class="font-display text-xl font-light text-white">
+              Cero Workspace
+            </h3>
+            <p class="text-white/60 text-xs tracking-widest uppercase mt-1">
+              UI Design
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="md:col-span-4 bg-amber-400 p-8 flex flex-col justify-between h-64"
+          data-reveal
+          style="transition-delay: 0.3s"
+        >
+          <p
+            class="font-display text-4xl font-light leading-tight text-stone-900"
+          >
+            ¿Tienes un proyecto en mente?
+          </p>
+          <a
+            href="#contact"
+            class="self-start text-xs tracking-widest uppercase font-light text-stone-900 border-b border-stone-900 pb-0.5 hover:opacity-60 transition-opacity"
+            >Conversemos →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SERVICES ══ -->
+    <section
+      id="services"
+      class="px-6 md:px-16 py-28"
+      style="background: #111009"
+    >
+      <div class="mb-16" data-reveal>
+        <p class="text-xs tracking-[0.3em] uppercase text-amber-400 mb-3">
+          Qué hacemos
+        </p>
+        <h2 class="font-display text-5xl md:text-6xl font-light text-stone-50">
+          Nuestros <em class="italic" style="color: #c4805a">servicios</em>
+        </h2>
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-px"
+        style="background: #2d2d2d"
+      >
+        <div
+          class="p-10 group cursor-pointer transition-colors duration-300"
+          style="background: #111009"
+          onmouseover="this.style.background = '#1a1a0e'"
+          onmouseout="this.style.background = '#111009'"
+          data-reveal
+        >
+          <div
+            class="w-10 h-10 border border-amber-400 flex items-center justify-center text-amber-400 text-lg mb-8 transition-colors duration-300"
+          >
+            ✦
+          </div>
+          <h3 class="font-display text-2xl font-light text-stone-50 mb-4">
+            Identidad de Marca
+          </h3>
+          <p class="text-stone-400 text-sm font-light leading-relaxed">
+            Logos, sistemas de color, tipografía y toda la arquitectura visual
+            que hace que tu marca sea inconfundible.
+          </p>
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 mt-8 text-xs text-amber-400 tracking-widest uppercase hover:gap-4 transition-all"
+            >Ver más →</a
+          >
+        </div>
+        <div
+          class="p-10 transition-colors duration-300"
+          style="background: #111009"
+          onmouseover="this.style.background = '#1a1a0e'"
+          onmouseout="this.style.background = '#111009'"
+          data-reveal
+          style="transition-delay: 0.1s"
+        >
+          <div
+            class="w-10 h-10 border border-amber-400 flex items-center justify-center text-amber-400 text-lg mb-8"
+          >
+            ◈
+          </div>
+          <h3 class="font-display text-2xl font-light text-stone-50 mb-4">
+            Diseño Web
+          </h3>
+          <p class="text-stone-400 text-sm font-light leading-relaxed">
+            Sitios que convierten. Diseñamos y desarrollamos experiencias
+            digitales rápidas, hermosas y accesibles.
+          </p>
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 mt-8 text-xs text-amber-400 tracking-widest uppercase hover:gap-4 transition-all"
+            >Ver más →</a
+          >
+        </div>
+        <div
+          class="p-10 transition-colors duration-300"
+          style="background: #111009"
+          onmouseover="this.style.background = '#1a1a0e'"
+          onmouseout="this.style.background = '#111009'"
+          data-reveal
+          style="transition-delay: 0.2s"
+        >
+          <div
+            class="w-10 h-10 border border-amber-400 flex items-center justify-center text-amber-400 text-lg mb-8"
+          >
+            ◎
+          </div>
+          <h3 class="font-display text-2xl font-light text-stone-50 mb-4">
+            Motion & Editorial
+          </h3>
+          <p class="text-stone-400 text-sm font-light leading-relaxed">
+            Animación, diseño editorial, fotografía y dirección de arte para
+            campañas memorables.
+          </p>
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 mt-8 text-xs text-amber-400 tracking-widest uppercase hover:gap-4 transition-all"
+            >Ver más →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ABOUT ══ -->
+    <section id="about" class="grid grid-cols-1 md:grid-cols-2 min-h-[80vh]">
+      <div class="img-zoom relative" data-reveal-left>
+        <img
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80"
+          alt="Studio"
+          class="w-full h-full min-h-[400px] object-cover"
+        />
+        <div
+          class="absolute inset-0"
+          style="background: rgba(17, 16, 9, 0.15)"
+        ></div>
+      </div>
+      <div
+        class="flex flex-col justify-center px-6 md:px-16 py-20 bg-stone-100"
+      >
+        <p
+          class="text-xs tracking-[0.3em] uppercase text-amber-500 mb-4"
+          data-reveal
+        >
+          Nuestra historia
+        </p>
+        <h2
+          class="font-display text-5xl font-light leading-tight mb-8"
+          data-reveal
+          style="transition-delay: 0.1s"
+        >
+          Creemos que el
+          <em class="italic" style="color: #b06a44">diseño</em> cambia todo.
+        </h2>
+        <p
+          class="text-sm font-light leading-loose text-stone-500 mb-6"
+          data-reveal
+          style="transition-delay: 0.2s"
+        >
+          Somos un estudio boutique fundado en Lima. Desde 2013 ayudamos a
+          marcas con alma a construir su presencia visual con intención, cuidado
+          y un punto de vista propio.
+        </p>
+        <p
+          class="text-sm font-light leading-loose text-stone-500 mb-10"
+          data-reveal
+          style="transition-delay: 0.3s"
+        >
+          Cada proyecto comienza con escuchar. Entendemos tu mundo antes de
+          abrir un archivo. El resultado: diseño que no solo se ve bien, sino
+          que funciona y perdura.
+        </p>
+        <div class="flex gap-8" data-reveal style="transition-delay: 0.4s">
+          <div class="text-center">
+            <p class="font-display text-4xl font-light" style="color: #b06a44">
+              12
+            </p>
+            <p class="text-xs tracking-widest uppercase text-stone-400 mt-1">
+              Años
+            </p>
+          </div>
+          <div class="w-px bg-stone-200"></div>
+          <div class="text-center">
+            <p class="font-display text-4xl font-light" style="color: #b06a44">
+              6
+            </p>
+            <p class="text-xs tracking-widest uppercase text-stone-400 mt-1">
+              Especialistas
+            </p>
+          </div>
+          <div class="w-px bg-stone-200"></div>
+          <div class="text-center">
+            <p class="font-display text-4xl font-light" style="color: #b06a44">
+              40+
+            </p>
+            <p class="text-xs tracking-widest uppercase text-stone-400 mt-1">
+              Países
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- STATS -->
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-num">84<sup>+</sup></div>
-        <div class="stat-label">Clientes satisfechos</div>
+    <!-- ══ TESTIMONIAL ══ -->
+    <section class="bg-amber-400 px-6 md:px-16 py-28 text-center" data-reveal>
+      <p class="text-xs tracking-[0.3em] uppercase text-amber-700 mb-8">
+        Lo que dicen
+      </p>
+      <blockquote
+        class="font-display text-3xl md:text-5xl font-light text-stone-900 max-w-4xl mx-auto leading-tight"
+      >
+        "Lumina transformó nuestra marca por completo. El resultado superó todo
+        lo que imaginamos."
+      </blockquote>
+      <div class="flex items-center justify-center gap-4 mt-10">
+        <img
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80"
+          alt="Cliente"
+          class="w-12 h-12 rounded-full object-cover"
+        />
+        <div class="text-left">
+          <p class="text-sm font-light text-stone-900">Valeria Ríos</p>
+          <p class="text-xs text-stone-600 tracking-wide uppercase">
+            CEO, Arkè Studio
+          </p>
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-num">12<sup>+</sup></div>
-        <div class="stat-label">Años de experiencia</div>
+    </section>
+
+    <!-- ══ CONTACT ══ -->
+    <section id="contact" class="grid grid-cols-1 md:grid-cols-2">
+      <div class="relative img-zoom">
+        <img
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80"
+          alt="Equipo"
+          class="w-full h-full min-h-[400px] object-cover"
+        />
+        <div
+          class="absolute inset-0 flex flex-col justify-end p-10"
+          style="background: rgba(17, 31, 25, 0.55)"
+        >
+          <p class="text-white/60 text-xs tracking-widest uppercase mb-2">
+            Oficina principal
+          </p>
+          <p class="font-display text-3xl font-light text-white">Lima, Perú</p>
+          <p class="text-white/60 text-sm mt-2">Miraflores · Av. Larco 1301</p>
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-num">6<sup>×</sup></div>
-        <div class="stat-label">Premios de diseño</div>
+
+      <div class="px-6 md:px-16 py-20" style="background: #111009">
+        <p
+          class="text-xs tracking-[0.3em] uppercase text-amber-400 mb-4"
+          data-reveal
+        >
+          Hablemos
+        </p>
+        <h2
+          class="font-display text-4xl md:text-5xl font-light text-stone-50 mb-10"
+          data-reveal
+        >
+          Empieza tu <em class="italic" style="color: #c4805a">proyecto</em>
+        </h2>
+        <div class="space-y-5" data-reveal>
+          <div>
+            <label
+              class="text-xs tracking-widest uppercase text-stone-400 block mb-2"
+              >Nombre</label
+            >
+            <input
+              type="text"
+              placeholder="Tu nombre"
+              class="w-full text-stone-100 text-sm font-light px-4 py-3 border border-stone-700 focus:border-amber-400 outline-none placeholder-stone-600 transition-colors"
+              style="background: #1a1a12"
+            />
+          </div>
+          <div>
+            <label
+              class="text-xs tracking-widest uppercase text-stone-400 block mb-2"
+              >Email</label
+            >
+            <input
+              type="email"
+              placeholder="tu@email.com"
+              class="w-full text-stone-100 text-sm font-light px-4 py-3 border border-stone-700 focus:border-amber-400 outline-none placeholder-stone-600 transition-colors"
+              style="background: #1a1a12"
+            />
+          </div>
+          <div>
+            <label
+              class="text-xs tracking-widest uppercase text-stone-400 block mb-2"
+              >Servicio</label
+            >
+            <select
+              class="w-full text-stone-400 text-sm font-light px-4 py-3 border border-stone-700 focus:border-amber-400 outline-none transition-colors"
+              style="background: #1a1a12"
+            >
+              <option>Identidad de Marca</option>
+              <option>Diseño Web</option>
+              <option>Motion & Editorial</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="text-xs tracking-widest uppercase text-stone-400 block mb-2"
+              >Mensaje</label
+            >
+            <textarea
+              rows="4"
+              placeholder="Cuéntanos sobre tu proyecto..."
+              class="w-full text-stone-100 text-sm font-light px-4 py-3 border border-stone-700 focus:border-amber-400 outline-none placeholder-stone-600 transition-colors resize-none"
+              style="background: #1a1a12"
+            ></textarea>
+          </div>
+          <button
+            class="btn-slide w-full py-4 text-stone-900 text-xs font-light tracking-widest uppercase bg-amber-400 transition-colors"
+          >
+            <span>Enviar mensaje</span>
+          </button>
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-num">98<sup>%</sup></div>
-        <div class="stat-label">Tasa de satisfacción</div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer
+      class="border-t border-stone-800 px-6 md:px-16 py-12"
+      style="background: #111009"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8"
+      >
+        <div>
+          <p
+            class="font-display text-2xl font-light text-stone-50 tracking-widest uppercase mb-1"
+          >
+            Lumina
+          </p>
+          <p class="text-xs text-stone-500 font-light">
+            Diseño con propósito · Lima, Perú
+          </p>
+        </div>
+        <ul
+          class="flex gap-8 text-xs font-light tracking-widest uppercase text-stone-500"
+        >
+          <li>
+            <a href="#" class="hover:text-stone-200 transition-colors"
+              >Instagram</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:text-stone-200 transition-colors"
+              >Behance</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:text-stone-200 transition-colors"
+              >LinkedIn</a
+            >
+          </li>
+        </ul>
+        <p class="text-xs text-stone-600 font-light">© 2025 Lumina Studio</p>
       </div>
-    </div>
+    </footer>
 
     <script>
-      const cursor = document.getElementById("cursor");
-      const ring = document.getElementById("cursorRing");
-      let mx = 0,
-        my = 0,
-        rx = 0,
-        ry = 0;
-
-      document.addEventListener("mousemove", (e) => {
-        mx = e.clientX;
-        my = e.clientY;
-        cursor.style.left = mx + "px";
-        cursor.style.top = my + "px";
-      });
-
-      (function animateRing() {
-        rx += (mx - rx) * 0.12;
-        ry += (my - ry) * 0.12;
-        ring.style.left = rx + "px";
-        ring.style.top = ry + "px";
-        requestAnimationFrame(animateRing);
-      })();
-
-      document.querySelectorAll("a, button").forEach((el) => {
-        el.addEventListener("mouseenter", () => {
-          cursor.style.width = "18px";
-          cursor.style.height = "18px";
-          ring.style.width = "52px";
-          ring.style.height = "52px";
-        });
-        el.addEventListener("mouseleave", () => {
-          cursor.style.width = "10px";
-          cursor.style.height = "10px";
-          ring.style.width = "36px";
-          ring.style.height = "36px";
-        });
-      });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll("[data-reveal], [data-reveal-left]")
+        .forEach((el) => observer.observe(el));
     </script>
   </body>
 </html>
